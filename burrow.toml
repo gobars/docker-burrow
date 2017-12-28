@@ -7,13 +7,13 @@ level="info"
 [zookeeper]
 servers=[{ZOOKEEPER_SERVERS}]
 
-[client-profile.kafka10]
-kafka-version="0.10.1.0"
+[client-profile.kafka-profile]
+kafka-version="{KAFKA_VERSION}"
 client-id="burrow-client"
 
 [cluster.gw]
 class-name="kafka"
-client-profile="kafka10"
+client-profile="kafka-profile"
 servers=[KAFKA_BROKERS]
 topic-refresh=120
 offset-refresh=10
@@ -22,7 +22,7 @@ offset-refresh=10
 class-name="kafka"
 cluster="gw"
 servers=[KAFKA_BROKERS]
-client-profile="kafka10"
+client-profile="kafka-profile"
 start-latest=false
 offsets-topic="__consumer_offsets"
 group-blacklist="^(console-consumer-|python-kafka-consumer-).*$"
