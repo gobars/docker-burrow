@@ -34,5 +34,13 @@ servers=[{ZOOKEEPER_SERVERS}]
 zookeeper-timeout=30
 group-blacklist="^(console-consumer-|python-kafka-consumer-).*$"
 
+[notifier.influxdb]
+class-name="http"
+interval=10
+threshold=1
+send-close=false
+template-open="/etc/burrow/tmpl/http-influxdb.tmpl"
+url-open="{INFLUXDB_URL}"
+
 [httpserver.default]
 address=":8000"
