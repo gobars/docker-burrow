@@ -6,6 +6,8 @@ level="info"
 
 [zookeeper]
 servers=[{ZOOKEEPER_SERVERS}]
+timeout=6
+root-path={ZOOKEEPER_PATH}
 
 [client-profile.kafka-profile]
 kafka-version="{KAFKA_VERSION}"
